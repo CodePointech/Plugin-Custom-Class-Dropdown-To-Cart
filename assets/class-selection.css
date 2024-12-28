@@ -1,0 +1,28 @@
+/* Custom Dropdown Style */
+.custom-dropdown select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNCIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgNCA2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9IiM1ODVBOUIiIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy43NzQgMjYuMjc4Yy4xMTIuMDk5LjExMy4yNTMuMDAyLjM1Mi0uMDk5LjExMi0uMjUzLjExMy0uMzUyLjAwMmwtMS4wMjctMS4wMjZhLjI1LjI1IDAgMCAwLS4zNTIgMEw0IDQuMDA4IDIuMjczIDUuMjQxYTIuMjUgMi4yNSAwIDAgMS0uMzUyLjAwMmw3LjUyNy03LjUyOGEuMjUgLjI1IDAgMCAwLS4zNTItLjM1MmwxLjAyNy0xLjAyNmEuMjUuMjUgMCAwIDAgLjM1MiAwbDcuNTI3IDcuNTI4YTIuMjUgMi4yNSAwIDAgMSAwIC4zNTJ6Ii8+PC9zdmc+");
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-size: 12px;
+}
+
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.custom-dropdown select:focus {
+  outline: none;
+  border-color: #858585;
+}
