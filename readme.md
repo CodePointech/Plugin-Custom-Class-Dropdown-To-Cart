@@ -24,6 +24,9 @@ Adds a custom "Class" dropdown field to cart page.
 * Add Server Side Check On Checkout page If No Class Select then redirect Back to Cart Page for selection
 * Add A checkbox of funcionality Enable Class Selection YES No
 
+= 2.1
+* Fix Issue on Empty Save
+
 
 == Credits ==
 CP Technologies

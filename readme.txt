@@ -1,6 +1,6 @@
 Custom Class Dropdown To Cart
 Contributors: CP Technologies
-Tags: 1.1.0
+Tags: 2.0
 Requires at least: 6.0
 Tested up to: 6.7.1
 Stable tag: 1.1.0
@@ -19,6 +19,13 @@ Adds a custom "Class" dropdown field to cart page.
 
 = 1.1.0 =
 * Add Required On Coupon Selected Cart Page.
+
+= 2.0
+* Add Server Side Check On Checkout page If No Class Select then redirect Back to Cart Page for selection
+* Add A checkbox of funcionality Enable Class Selection YES No
+
+= 2.1
+* Fix Issue on Empty Save
 
 
 == Credits ==
