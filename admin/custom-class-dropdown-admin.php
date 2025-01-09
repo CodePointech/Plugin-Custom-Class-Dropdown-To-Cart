@@ -23,28 +23,57 @@ function class_dropdown_admin_menu() {
     );
 }
 
+add_action('admin_menu', 'class_dropdown_admin_menu');
+
+// Remove the parent menu as a submenu
+function remove_cp_technologies_submenu() {
+    remove_submenu_page('cp-technologies', 'cp-technologies');
+}
+
+add_action('admin_menu', 'remove_cp_technologies_submenu', 999);
+
 
 function class_dropdown_settings_page() {
     if (!current_user_can('manage_options')) {
         return;
     }
 
-
     if (isset($_POST['save_class_dropdown_options'])) {
         $dropdown_options = isset($_POST['dropdown_options']) ? array_map('sanitize_text_field', $_POST['dropdown_options']) : [];
         $default_option = isset($_POST['default_option']) ? sanitize_text_field($_POST['default_option']) : '';
+
+        if (isset($_POST['class_selection_enabled'])) {
+            $class_selection_enabled = sanitize_text_field($_POST['class_selection_enabled']);
+            update_option('class_selection_enabled', $class_selection_enabled);
+        }
+
         update_option('class_dropdown_options', $dropdown_options);
         update_option('class_dropdown_default_option', $default_option);
+
         echo '<div class="updated"><p>' . __('Options updated successfully.', 'custom_class_dropdown_to_cart') . '</p></div>';
     }
 
     $current_options = get_option('class_dropdown_options', []);
     $default_option = get_option('class_dropdown_default_option', __('Select Your Class', 'custom_class_dropdown_to_cart'));
+    $class_selection_enabled = get_option('class_selection_enabled', 'no');
     ?>
     <div class="wrap">
         <h1><?php _e('Class Dropdown Option Cart', 'custom_class_dropdown_to_cart'); ?></h1>
         <form method="post">
             <table class="form-table">
+                        <tr>
+                <th scope="row"><?php _e('Enable Class Selection Functionality', 'custom_class_dropdown_to_cart'); ?></th>
+                <td>
+                    <label>
+                        <input type="radio" name="class_selection_enabled" value="yes" <?php checked($class_selection_enabled, 'yes'); ?> />
+                        <?php _e('Yes', 'custom_class_dropdown_to_cart'); ?>
+                    </label><br>
+                    <label>
+                        <input type="radio" name="class_selection_enabled" value="no" <?php checked($class_selection_enabled, 'no'); ?> />
+                        <?php _e('No', 'custom_class_dropdown_to_cart'); ?>
+                    </label>
+                </td>
+            </tr>
                 <tr>
                     <th scope="row"><?php _e('Default Option Text', 'custom_class_dropdown_to_cart'); ?></th>
                     <td>

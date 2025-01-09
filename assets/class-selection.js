@@ -37,6 +37,26 @@ jQuery(document).ready(function ($) {
                     }
                 });
             } else {
+
+
+                $.ajax({
+                    type: 'POST',
+                    url: ajax_object.ajax_url,
+                    data: {
+                        action: 'save_class_selection',
+                        selected_class: selectedClass
+                    },
+                    success: function (response) {
+                        if (!response.success) {
+                            alert('Failed to save the selected class. Please try again.');
+                        }
+                    },
+                    error: function () {
+                        alert('An error occurred. Please try again.');
+                    }
+                });
+
+
                 // Add the highlight back if no class is selected
                 $('#class-selection').addClass('highlight-dropdown');
 
