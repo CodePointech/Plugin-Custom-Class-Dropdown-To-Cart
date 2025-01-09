@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Custom Class Dropdown To Cart
  * Description: Adds a custom "Class" dropdown field to cart page. 
- * Version: 2.0
+ * Version: 2.1
  * Author: CP Technologies
  * Text Domain: custom_class_dropdown_to_cart
  */
