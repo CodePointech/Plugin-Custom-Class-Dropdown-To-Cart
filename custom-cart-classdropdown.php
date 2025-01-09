@@ -48,7 +48,7 @@ add_action('wp_ajax_save_class_selection', 'save_class_selection_ajax');
 add_action('wp_ajax_nopriv_save_class_selection', 'save_class_selection_ajax');
 
 function save_class_selection_ajax() {
-    if (is_class_selection_enabled() && isset($_POST['selected_class']) && !empty($_POST['selected_class'])) {
+    if (is_class_selection_enabled() && isset($_POST['selected_class'])) {
         $selected_class = sanitize_text_field($_POST['selected_class']);
         WC()->session->set('selected_class', $selected_class);
 
